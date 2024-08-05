@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class LablePassword extends StatelessWidget {
-  const LablePassword({super.key, required this.title});
+class RegisterPasswordLableInfo extends StatelessWidget {
+  const RegisterPasswordLableInfo({super.key, required this.title});
   final String title;
 
   @override
@@ -9,7 +9,7 @@ class LablePassword extends StatelessWidget {
     return Text(
       textDirection: TextDirection.rtl,
       title,
-      style: TextStyle(
+      style: const TextStyle(
           fontSize: 11,
           fontWeight: FontWeight.w900,
           color: Colors.grey,

@@ -9,20 +9,24 @@ class TextFieldWidget extends StatelessWidget {
       required this.icon});
   final String title;
   final String lable;
-  final Icon icon;
+  final IconData icon;
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        Text(
-          title,
-          style: const TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.w500,
-              color: Colors.black,
-              height: 2.5),
-        ),
+        title == ''
+            ? const SizedBox(
+                height: 0,
+              )
+            : Text(
+                title,
+                style: const TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black,
+                    height: 2.5),
+              ),
         SizedBox(
           height: 45,
           child: TextField(
@@ -39,7 +43,11 @@ class TextFieldWidget extends StatelessWidget {
                         size: 18,
                       )
                     : null,
-                suffixIcon: icon,
+                suffixIcon: Icon(
+                  icon,
+                  color: Colors.grey,
+                  size: 18,
+                ),
                 labelText: lable,
                 labelStyle: const TextStyle(
                     fontSize: 13,

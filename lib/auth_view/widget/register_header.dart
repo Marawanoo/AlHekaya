@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class HeaderSignUp extends StatelessWidget {
-  const HeaderSignUp({super.key});
+class RegisterHeader extends StatelessWidget {
+  const RegisterHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(bottom: 75),
+      padding: const EdgeInsets.only(bottom: 100),
       width: MediaQuery.sizeOf(context).width,
       height: 250,
       decoration: const BoxDecoration(

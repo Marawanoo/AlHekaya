@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:news/main_variable.dart';
 import 'package:news/services/news_services.dart';
-import 'package:news/views/login_view.dart';
-import 'package:news/views/sign_up_view.dart';
-import 'package:news/views/splash_view.dart';
+import 'package:news/home_view/view/home_view.dart';
+import 'package:news/auth_view/view/login_view.dart';
+import 'package:news/auth_view/view/register_view.dart';
+import 'package:news/splash_view/view/splash_view.dart';
 
 void main() {
   NewsServices().getNews();
@@ -15,14 +17,15 @@ class NewsApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: splashView,
-      routes: {
-        splashView: (context) => const SplashView(),
-        loginView: (context) => const LoginView(),
-        signUpView: (context) => const SignUpView(),
-      },
+      getPages: [
+        GetPage(name: splashView, page: () => const SplashView()),
+        GetPage(name: loginView, page: () => const LoginView()),
+        GetPage(name: registerView, page: () => const RegisterView()),
+        GetPage(name: homeView, page: () => const HomeView())
+      ],
       theme: ThemeData(
           textTheme: const TextTheme(
               bodyLarge: TextStyle(

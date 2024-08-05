@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../main_variable.dart';
+import '../../main_variable.dart';
 
-class LableSign extends StatelessWidget {
-  const LableSign({super.key, required this.buttonText, required this.title});
+class AuthSignLable extends StatelessWidget {
+  const AuthSignLable(
+      {super.key, required this.buttonText, required this.title});
   final String buttonText;
   final String title;
 
@@ -14,9 +15,9 @@ class LableSign extends StatelessWidget {
       children: [
         TextButton(
           style: TextButton.styleFrom(padding: const EdgeInsets.all(0)),
-          onPressed: () => Navigator.pushNamed(context, signUpView),
+          onPressed: () => Navigator.pushNamed(context, registerView),
           child: Text(buttonText,
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w700,
                   color: mainColor,
