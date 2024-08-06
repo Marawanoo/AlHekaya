@@ -7,6 +7,7 @@ class HomeHeaderBodyBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+        reverse: true,
         scrollDirection: Axis.horizontal,
         itemCount: 5,
         itemBuilder: (context, index) => const HomeHeaderBodyCard());

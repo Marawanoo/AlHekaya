@@ -10,7 +10,18 @@ class HomeArthurLable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Row(
+      mainAxisAlignment: MainAxisAlignment.end,
       children: [
+        Expanded(
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: Icon(
+              color: mainColor,
+              Iconsax.bookmark_2,
+              size: 25,
+            ),
+          ),
+        ),
         CircleAvatar(
           radius: 15,
           backgroundImage: AssetImage(
@@ -22,7 +33,7 @@ class HomeArthurLable extends StatelessWidget {
         Column(
           children: [
             Text(
-              'Hakimi Abdul',
+              'حاكيم عبدالله',
               style: TextStyle(
                   fontSize: 11,
                   fontWeight: FontWeight.w500,
@@ -31,21 +42,11 @@ class HomeArthurLable extends StatelessWidget {
             ),
             IconText(
               icon: Iconsax.clock,
-              title: ' 5h ago',
+              title: ' 5h منذ ',
               color: Color(0xff1b2047),
             )
           ],
         ),
-        Expanded(
-          child: Align(
-            alignment: Alignment.centerRight,
-            child: Icon(
-              color: mainColor,
-              Iconsax.send_2,
-              size: 25,
-            ),
-          ),
-        )
       ],
     );
   }

@@ -22,23 +22,12 @@ class NewsComponent extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Card(
-                clipBehavior: Clip.hardEdge,
-                child: Image.asset(
-                    fit: BoxFit.fill,
-                    width: 100,
-                    height: 100,
-                    'assets/images/wallpaperflare.com_wallpaper.jpg'),
-              ),
-              const SizedBox(
-                width: 2,
-              ),
               const Expanded(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
-                      'News:Sports',
+                      'أخبار: رياضة',
                       style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
@@ -49,7 +38,7 @@ class NewsComponent extends StatelessWidget {
                       height: space / 4,
                     ),
                     Text(
-                      'EURO 2024',
+                      'يورو 2024',
                       style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w700,
@@ -57,8 +46,9 @@ class NewsComponent extends StatelessWidget {
                           height: 1.3),
                     ),
                     Text(
+                      textDirection: TextDirection.rtl,
                       maxLines: 2,
-                      'Mbappe "not doing well after mo salah',
+                      'مبابي "ليس على ما يرام بعد محمد صلاح',
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                           fontSize: 14,
@@ -70,9 +60,10 @@ class NewsComponent extends StatelessWidget {
                       height: space / 2,
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         IconText(
-                          title: ' 17th Jun',
+                          title: ' 17th Jun ',
                           icon: Iconsax.calendar,
                           color: Color(0xffb3b5bd),
                         ),
@@ -80,7 +71,7 @@ class NewsComponent extends StatelessWidget {
                           width: space * 2,
                         ),
                         IconText(
-                          title: ' 09:21am',
+                          title: ' 09:21am ',
                           icon: Iconsax.clock,
                           color: Color(0xffb3b5bd),
                         )
@@ -88,12 +79,20 @@ class NewsComponent extends StatelessWidget {
                     )
                   ],
                 ),
-              )
+              ),
+              Card(
+                clipBehavior: Clip.hardEdge,
+                child: Image.asset(
+                    fit: BoxFit.fill,
+                    width: 100,
+                    height: 100,
+                    'assets/images/wallpaperflare.com_wallpaper.jpg'),
+              ),
             ],
           ),
         ),
         const Positioned(
-            right: 10,
+            left: 10,
             top: 20,
             child: Icon(
               size: 18,

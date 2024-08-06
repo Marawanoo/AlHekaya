@@ -11,15 +11,6 @@ class HomeSearchBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Expanded(
-          child: TextFieldWidget(
-              title: '',
-              lable: 'Search news or author',
-              icon: Iconsax.search_favorite),
-        ),
-        const SizedBox(
-          width: space,
-        ),
         Container(
           padding: const EdgeInsets.all(5),
           decoration: BoxDecoration(
@@ -30,7 +21,16 @@ class HomeSearchBar extends StatelessWidget {
             Iconsax.arrange_circle,
             color: Colors.white,
           ),
-        )
+        ),
+        const SizedBox(
+          width: space,
+        ),
+        const Expanded(
+          child: TextFieldWidget(
+              title: '',
+              lable: 'ابحث عن الأخبار أو الكاتب',
+              icon: Iconsax.search_favorite),
+        ),
       ],
     );
   }

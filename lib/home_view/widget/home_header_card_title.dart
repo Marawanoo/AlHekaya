@@ -6,6 +6,7 @@ class HomeHeaderCardTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Text(
+        textDirection: TextDirection.rtl,
         style: TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.w500,
@@ -13,6 +14,6 @@ class HomeHeaderCardTitle extends StatelessWidget {
             height: 1.3),
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
-        'Eid Mubarak wishes: Muslims in the US and other part of the');
+        "تهاني عيد مبارك: المسلمون في الولايات المتحدة وأجزاء أخرى من العالم");
   }
 }

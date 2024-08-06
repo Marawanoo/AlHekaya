@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:news/home_view/view/explore_view.dart';
 import 'package:news/main_variable.dart';
 import 'package:news/services/news_services.dart';
 import 'package:news/home_view/view/home_view.dart';
@@ -24,7 +25,8 @@ class NewsApp extends StatelessWidget {
         GetPage(name: splashView, page: () => const SplashView()),
         GetPage(name: loginView, page: () => const LoginView()),
         GetPage(name: registerView, page: () => const RegisterView()),
-        GetPage(name: homeView, page: () => const HomeView())
+        GetPage(name: homeView, page: () => const HomeView()),
+        GetPage(name: exploreView, page: () => const ExploreView())
       ],
       theme: ThemeData(
           textTheme: const TextTheme(

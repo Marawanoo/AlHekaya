@@ -16,10 +16,6 @@ class IconText extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Icon(
-          icon,
-          size: 15,
-        ),
         Text(
           title,
           style: TextStyle(
@@ -27,7 +23,11 @@ class IconText extends StatelessWidget {
               fontWeight: FontWeight.w500,
               color: color,
               height: 1.3),
-        )
+        ),
+        Icon(
+          icon,
+          size: 15,
+        ),
       ],
     );
   }

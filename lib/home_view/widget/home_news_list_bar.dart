@@ -12,40 +12,41 @@ class HomeNewsListBar extends StatelessWidget {
       height: 30,
       width: MediaQuery.sizeOf(context).width,
       child: ListView(
+        reverse: true,
         scrollDirection: Axis.horizontal,
         children: const [
           SizedBox(
               width: 75,
               child: ElevatedBottomWidget(
-                  size: 14, title: 'All', color: mainColor)),
+                  size: 14, title: 'الكل', color: mainColor)),
           SizedBox(
             width: space / 2,
           ),
           SizedBox(
               width: 75,
               child: ElevatedBottomWidget(
-                  size: 14, title: 'Sports', color: Colors.grey)),
+                  size: 14, title: 'الرياضة', color: Colors.grey)),
           SizedBox(
             width: space / 2,
           ),
           SizedBox(
               width: 75,
               child: ElevatedBottomWidget(
-                  size: 14, title: 'Crypto', color: Colors.grey)),
+                  size: 14, title: 'العملات', color: Colors.grey)),
           SizedBox(
             width: space / 2,
           ),
           SizedBox(
               width: 75,
               child: ElevatedBottomWidget(
-                  size: 14, title: 'Politics', color: Colors.grey)),
+                  size: 14, title: 'السياسة', color: Colors.grey)),
           SizedBox(
             width: space / 2,
           ),
           SizedBox(
               width: 75,
               child: ElevatedBottomWidget(
-                  size: 14, title: 'Current', color: Colors.grey)),
+                  size: 14, title: 'الاقتصاد', color: Colors.grey)),
           SizedBox(
             width: space / 2,
           ),
