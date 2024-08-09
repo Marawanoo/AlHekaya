@@ -6,19 +6,15 @@ class RegisterHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(bottom: 100),
+      padding: const EdgeInsets.only(bottom: 125),
       width: MediaQuery.sizeOf(context).width,
       height: 250,
       decoration: const BoxDecoration(
           gradient:
               LinearGradient(colors: [Color(0xff990F20), Color(0xffFF213E)])),
-      child: const Center(
+      child:  Center(
           child: Text('إنشاء حساب',
-              style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.white,
-                  height: 1.3))),
+              style: Theme.of(context).textTheme.headlineMedium!.copyWith(color: Colors.white))),
     );
   }
 }

@@ -9,11 +9,7 @@ class AuthHeaderText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title,
-      style: const TextStyle(
-          fontSize: 25,
-          fontWeight: FontWeight.w600,
-          color: mainColor,
-          height: 1),
+      style: Theme.of(context).textTheme.headlineMedium!.copyWith(color: mainColor),
     );
   }
 }

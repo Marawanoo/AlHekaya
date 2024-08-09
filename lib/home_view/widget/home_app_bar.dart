@@ -13,11 +13,11 @@ class HomeAppBar extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Icon(
                   Iconsax.notification,
-                  size: 25,
+                  size: 28,
                 ))),
         Text(
           ' صباح الخير!  \n  ضيف   ',
-          style: Theme.of(context).textTheme.bodyLarge,
+          style: Theme.of(context).textTheme.titleMedium,
           textDirection: TextDirection.rtl,
         ),
         const CircleAvatar(

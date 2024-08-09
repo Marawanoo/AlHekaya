@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:news/home_view/view/details_view.dart';
 import 'package:news/home_view/view/explore_view.dart';
+import 'package:news/home_view/view/main_view.dart';
 import 'package:news/main_variable.dart';
 import 'package:news/services/news_services.dart';
 import 'package:news/home_view/view/home_view.dart';
@@ -23,34 +25,74 @@ class NewsApp extends StatelessWidget {
       initialRoute: splashView,
       getPages: [
         GetPage(name: splashView, page: () => const SplashView()),
+        GetPage(name: mainView, page: () => const MainView()),
         GetPage(name: loginView, page: () => const LoginView()),
         GetPage(name: registerView, page: () => const RegisterView()),
         GetPage(name: homeView, page: () => const HomeView()),
-        GetPage(name: exploreView, page: () => const ExploreView())
+        GetPage(name: exploreView, page: () => const ExploreView()),
+        GetPage(name: detailsView, page: () => const DetailsView())
       ],
       theme: ThemeData(
-          textTheme: const TextTheme(
-              bodyLarge: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.black,
-                  height: 1.3),
-              displayLarge: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.black,
-                  height: 1.3),
-              displayMedium: TextStyle(
-                  fontSize: 13,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.black,
-                  height: 1.3),
-              displaySmall: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.w300,
-                  color: Colors.black,
-                  height: 1.3)),
-          fontFamily: 'Montserrat'),
+        scaffoldBackgroundColor: Colors.white,
+        fontFamily: 'Rubik',
+        textTheme: TextTheme(
+          headlineLarge: const TextStyle(
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,height: 1.3
+          ),
+          headlineMedium: const TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.w600,
+            color: Colors.black,height: 1.3
+          ),
+          headlineSmall: const TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+            color: Colors.black,height: 1.3
+          ),
+          titleLarge: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+            color: Colors.black,height: 1.3
+          ),
+          titleMedium: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
+            color: Colors.black,height: 1.3
+          ),
+          titleSmall: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w400,
+            color: Colors.black,height: 1.3
+          ),
+          bodyLarge: const TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
+            color: Colors.black,height: 1.3
+          ),
+          bodyMedium: const TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.normal,
+            color: Colors.black,height: 1.3
+          ),
+          bodySmall: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
+            color: Colors.black.withOpacity(0.5),height: 1.3
+          ),
+          labelLarge: const TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.normal,
+            color: Colors.black,height: 1.3
+          ),
+          labelMedium: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.normal,
+            color: Colors.black.withOpacity(0.5),height: 1.3
+          ),
+        ),
+      ),
     );
   }
 }

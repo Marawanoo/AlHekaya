@@ -19,7 +19,7 @@ class ExploreCategorieList extends StatelessWidget {
                   size: 14,
                   title: categorie[0],
                   color: secondMainColor)),
-          SizedBox(
+          const SizedBox(
             width: space,
           ),
           Expanded(
@@ -28,7 +28,7 @@ class ExploreCategorieList extends StatelessWidget {
                   size: 14,
                   title: categorie[1],
                   color: secondMainColor)),
-          SizedBox(
+          const SizedBox(
             width: space,
           ),
           Expanded(
@@ -37,7 +37,7 @@ class ExploreCategorieList extends StatelessWidget {
                   size: 14,
                   title: categorie[2],
                   color: secondMainColor)),
-          SizedBox(
+          const SizedBox(
             width: space,
           ),
           Expanded(

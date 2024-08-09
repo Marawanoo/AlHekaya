@@ -54,7 +54,7 @@ class LoginBody extends StatelessWidget {
               ),
               onPressed: () {},
               child: Text('نسيت كلمة المرور؟',
-                  style: Theme.of(context).textTheme.displayMedium),
+                  style: Theme.of(context).textTheme.titleSmall),
             ),
           ),
           const SizedBox(

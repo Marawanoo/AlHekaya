@@ -6,13 +6,11 @@ class HomeNewsComponentBuldier extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ListView.builder(
-          itemCount: 2,
-          itemBuilder: (context, index) => const NewsComponent(),
-        ),
-      ],
+    return ListView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: 2,
+      itemBuilder: (context, index) => const NewsComponent(),
     );
   }
 }

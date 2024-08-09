@@ -25,28 +25,28 @@ class HomeNewsListBar extends StatelessWidget {
           SizedBox(
               width: 75,
               child: ElevatedBottomWidget(
-                  size: 14, title: 'الرياضة', color: Colors.grey)),
+                  size: 14, title: 'الرياضة', color: secondMainColor)),
           SizedBox(
             width: space / 2,
           ),
           SizedBox(
               width: 75,
               child: ElevatedBottomWidget(
-                  size: 14, title: 'العملات', color: Colors.grey)),
+                  size: 14, title: 'العملات', color: secondMainColor)),
           SizedBox(
             width: space / 2,
           ),
           SizedBox(
               width: 75,
               child: ElevatedBottomWidget(
-                  size: 14, title: 'السياسة', color: Colors.grey)),
+                  size: 14, title: 'السياسة', color: secondMainColor)),
           SizedBox(
             width: space / 2,
           ),
           SizedBox(
               width: 75,
               child: ElevatedBottomWidget(
-                  size: 14, title: 'الاقتصاد', color: Colors.grey)),
+                  size: 14, title: 'الاقتصاد', color: secondMainColor)),
           SizedBox(
             width: space / 2,
           ),

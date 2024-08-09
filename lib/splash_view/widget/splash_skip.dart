@@ -11,13 +11,9 @@ class SplashSkip extends StatelessWidget {
       left: -10,
       top: 20,
       child: TextButton(
-        onPressed: () => Get.toNamed(homeView),
-        child: const Text('تخطي',
-            style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w700,
-                color: Colors.white,
-                height: 1.3)),
+        onPressed: () => Get.toNamed(mainView),
+        child:  Text('تخطي',
+            style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: Colors.white)),
       ),
     );
   }

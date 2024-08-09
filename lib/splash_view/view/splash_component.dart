@@ -15,7 +15,7 @@ class SplachComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(25),
+      padding: const EdgeInsets.all(20),
       width: MediaQuery.sizeOf(context).width,
       decoration: BoxDecoration(
           image: DecorationImage(

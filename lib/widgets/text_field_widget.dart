@@ -21,16 +21,12 @@ class TextFieldWidget extends StatelessWidget {
               )
             : Text(
                 title,
-                style: const TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black,
-                    height: 2.5),
+                style: Theme.of(context).textTheme.bodyLarge!.copyWith(height: 2.5),
               ),
         SizedBox(
           height: 45,
           child: TextField(
-            style: Theme.of(context).textTheme.displayMedium,
+            style: Theme.of(context).textTheme.bodyMedium,
             decoration: InputDecoration(
                 focusedBorder: const OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.black),
@@ -49,11 +45,7 @@ class TextFieldWidget extends StatelessWidget {
                   size: 18,
                 ),
                 labelText: lable,
-                labelStyle: const TextStyle(
-                    fontSize: 13,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.grey,
-                    height: 1.3),
+                labelStyle:Theme.of(context).textTheme.labelMedium,
                 border: const OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10)))),
           ),

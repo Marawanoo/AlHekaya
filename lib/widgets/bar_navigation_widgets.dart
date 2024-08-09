@@ -56,11 +56,9 @@ class _BarNavigationWidgetsState extends State<BarNavigationWidgets> {
       backgroundColor: Colors.white,
       elevation: 0,
       iconSize: 20,
-      selectedLabelStyle: const TextStyle(
-          fontSize: 15, fontWeight: FontWeight.w500, fontFamily: 'Cairo'),
+      selectedLabelStyle: Theme.of(context).textTheme.labelLarge,
       selectedItemColor: widget.barSelect,
-      unselectedLabelStyle: const TextStyle(
-          fontSize: 15, fontWeight: FontWeight.w500, fontFamily: 'Cairo'),
+      unselectedLabelStyle: Theme.of(context).textTheme.labelLarge,
       unselectedItemColor: const Color.fromARGB(255, 65, 65, 65),
     );
   }

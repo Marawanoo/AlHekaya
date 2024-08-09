@@ -70,15 +70,15 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Montserrat
+    - family: Rubik
       fonts:
-        - asset: fonts/NotoSansArabic-Bold.ttf
+        - asset: fonts/Rubik-Bold.ttf
           weight: 900
-        - asset: fonts/NotoSansArabic-SemiBold.ttf
+        - asset: fonts/Rubik-SemiBold.ttf
           weight: 700
-        - asset: fonts/NotoSansArabic-Medium.ttf
+        - asset: fonts/Rubik-Medium.ttf
           weight: 500
-        - asset: fonts/NotoSansArabic-Regular.ttf
+        - asset: fonts/Rubik-Regular.ttf
           weight: 300
   #   - family: Trajan Pro
   #     fonts:

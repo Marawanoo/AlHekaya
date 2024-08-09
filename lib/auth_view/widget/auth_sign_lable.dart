@@ -17,11 +17,7 @@ class AuthSignLable extends StatelessWidget {
           style: TextButton.styleFrom(padding: const EdgeInsets.all(0)),
           onPressed: () => Navigator.pushNamed(context, registerView),
           child: Text(buttonText,
-              style: const TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w700,
-                  color: mainColor,
-                  height: 1.3),
+              style: Theme.of(context).textTheme.titleLarge!.copyWith(color: mainColor),
               textDirection: TextDirection.rtl),
         ),
         Text(

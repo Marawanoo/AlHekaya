@@ -5,10 +5,14 @@ class IconText extends StatelessWidget {
       {super.key,
       required this.title,
       required this.icon,
-      required this.color});
+      required this.color,
+      this.textSize = 11,
+      this.iconSize = 15});
   final String title;
   final IconData icon;
   final Color color;
+  final double textSize;
+  final double iconSize;
 
   @override
   Widget build(BuildContext context) {
@@ -18,15 +22,11 @@ class IconText extends StatelessWidget {
       children: [
         Text(
           title,
-          style: TextStyle(
-              fontSize: 11,
-              fontWeight: FontWeight.w500,
-              color: color,
-              height: 1.3),
+          style: Theme.of(context).textTheme.labelLarge,
         ),
         Icon(
           icon,
-          size: 15,
+          size: iconSize,
         ),
       ],
     );

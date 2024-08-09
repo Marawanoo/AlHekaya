@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:news/splash_view/model/splash_model.dart';
-import 'package:news/splash_view/style/splash_style.dart';
 
 class SplashText extends StatelessWidget {
   const SplashText({super.key, required this.splashModel});
@@ -11,13 +10,13 @@ class SplashText extends StatelessWidget {
       children: [
         Text(
           splashModel.title,
-          style: SplashStyle.kSplashTitleStyle,
+          style: Theme.of(context).textTheme.headlineMedium!.copyWith(color: Colors.white),
           textDirection: TextDirection.rtl,
           textAlign: TextAlign.center,
         ),
         Text(
           splashModel.subtitle,
-          style: SplashStyle.kSplashSubtitleStyle,
+          style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: Colors.white) ,
           textAlign: TextAlign.center,
           textDirection: TextDirection.rtl,
         ),

@@ -27,11 +27,7 @@ class ElevatedBottomWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(radius))),
       child: Text(
         title,
-        style: TextStyle(
-            fontSize: size,
-            fontWeight: FontWeight.w500,
-            color: Colors.white,
-            height: 1.3),
+        style: Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: size,color: Colors.white),
       ),
     );
   }

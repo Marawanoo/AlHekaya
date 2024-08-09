@@ -12,20 +12,16 @@ class HomeTitleBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         TextButton(
-          style: TextButton.styleFrom(padding: EdgeInsets.all(0)),
+          style: TextButton.styleFrom(padding: const EdgeInsets.all(0)),
           onPressed: () => Get.toNamed(loginView),
-          child: const Text(
+          child:  Text(
             'عرض الكل',
-            style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w500,
-                color: mainColor,
-                height: 2),
+            style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: mainColor),
           ),
         ),
         Text(
           title,
-          style: Theme.of(context).textTheme.bodyLarge,
+          style: Theme.of(context).textTheme.titleLarge,
         ),
       ],
     );

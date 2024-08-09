@@ -9,11 +9,7 @@ class RegisterPasswordLableInfo extends StatelessWidget {
     return Text(
       textDirection: TextDirection.rtl,
       title,
-      style: const TextStyle(
-          fontSize: 11,
-          fontWeight: FontWeight.w900,
-          color: Colors.grey,
-          height: 1.3),
+      style: Theme.of(context).textTheme.labelMedium,
     );
   }
 }
