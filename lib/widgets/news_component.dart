@@ -33,7 +33,7 @@ class NewsComponent extends StatelessWidget {
                         'أخبار: رياضة',
                         style: Theme.of(context).textTheme.labelMedium,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: space / 4,
                       ),
                       Text(
@@ -47,10 +47,10 @@ class NewsComponent extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: secondMainColor),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: space / 2,
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           IconText(

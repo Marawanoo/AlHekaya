@@ -13,7 +13,7 @@ class HomeArthurLable extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
 
-        Expanded(
+        const Expanded(
           child: Align(
             alignment: Alignment.centerLeft,
             child: Icon(
@@ -31,15 +31,15 @@ class HomeArthurLable extends StatelessWidget {
               'حاكيم عبدالله',
               style: Theme.of(context).textTheme.labelLarge,
             ),
-            IconText(
+            const IconText(
               icon: Iconsax.clock,
               title: ' 5h منذ ',
               color: Color(0xff1b2047),
             )
           ],
-        ),SizedBox(
+        ),const SizedBox(
     width: space / 2,
-    ),CircleAvatar(
+    ),const CircleAvatar(
           radius: 15,
           backgroundImage: AssetImage(
               'assets/images/350128296_675694891049596_7342086158320602888_n.png'),

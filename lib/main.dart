@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:news/home_view/view/bookmark_view.dart';
 import 'package:news/home_view/view/details_view.dart';
 import 'package:news/home_view/view/explore_view.dart';
 import 'package:news/home_view/view/main_view.dart';
@@ -31,8 +32,9 @@ class NewsApp extends StatelessWidget {
         GetPage(name: homeView, page: () => const HomeView()),
         GetPage(name: exploreView, page: () => const ExploreView()),
         GetPage(name: detailsView, page: () => const DetailsView())
+        ,GetPage(name: bookmarkView, page: () => const BookmarkView(),),
       ],
-      theme: ThemeData(
+      theme: ThemeData(appBarTheme: const AppBarTheme(backgroundColor: Colors.white),
         scaffoldBackgroundColor: Colors.white,
         fontFamily: 'Rubik',
         textTheme: TextTheme(

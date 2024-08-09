@@ -7,6 +7,7 @@ const String exploreView = '/exploreView';
 const String loginView = '/loginView';
 const String registerView = '/registerView';
 const String detailsView = '/detailsView';
+const String bookmarkView = '/bookmarkView';
 const Color mainColor = Color(0xffe83030);
 const Color secondMainColor = Color(0xff010a2f);
 const double space = 15;

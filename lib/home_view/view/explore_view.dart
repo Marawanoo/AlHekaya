@@ -15,42 +15,42 @@ class ExploreView extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Padding(
+                const Padding(
                   padding: EdgeInsets.only(top: 10),
                   child: TextFieldWidget(
                       title: '', lable: 'بحث', icon: Iconsax.search_normal),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: space,
                 ),
                 Text(
                   'فئات',
                   style: Theme.of(context).textTheme.headlineSmall,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: space,
                 ),
-                ExploreCategorieList(
+                const ExploreCategorieList(
                   categorie: ['سياسة', 'رياضة', 'اعمال', 'الجميع'],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: space,
                 ),
-                ExploreCategorieList(
+                const ExploreCategorieList(
                   categorie: ['آخر', 'موضة', 'تكنولوجيا', 'الصحة'],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: space,
                 ),
-                SizedBox(height: 25, child: HomeTitleBar(title: 'الشائع')),
-                NewsComponent(),
-                NewsComponent(),
-                NewsComponent()
+                const SizedBox(height: 25, child: HomeTitleBar(title: 'الشائع')),
+                const NewsComponent(),
+                const NewsComponent(),
+                const NewsComponent()
               ],
             ),
           ),

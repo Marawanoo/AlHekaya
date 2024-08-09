@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news/home_view/view/bookmark_view.dart';
 import 'package:news/home_view/view/explore_view.dart';
 import 'package:news/home_view/view/home_view.dart';
 
@@ -18,7 +19,7 @@ class _MainViewState extends State<MainView> {
     return Scaffold(
       body: PageView(
         reverse: true,
-        children: const [HomeView(), ExploreView()],
+        children: const [HomeView(), ExploreView(),BookmarkView()],
       ),
       bottomNavigationBar: const BarNavigationWidgets(
         barIndex: 2,
