@@ -2,14 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
 class TextFieldWidget extends StatelessWidget {
-  const TextFieldWidget(
-      {super.key,
-      required this.title,
-      required this.lable,
-      required this.icon});
+  const TextFieldWidget({
+    super.key,
+    required this.title,
+    required this.lable,
+    required this.icon,
+    this.height = 45,
+  });
   final String title;
   final String lable;
   final IconData icon;
+  final double height;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -21,14 +25,17 @@ class TextFieldWidget extends StatelessWidget {
               )
             : Text(
                 title,
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(height: 2.5),
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge!
+                    .copyWith(height: 2.5),
               ),
         SizedBox(
-          height: 45,
+          height: height,
           child: TextField(
             style: Theme.of(context).textTheme.bodyMedium,
             decoration: InputDecoration(
-                focusedBorder: const OutlineInputBorder(
+                focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.black),
                     borderRadius: BorderRadius.all(Radius.circular(10))),
                 contentPadding:
@@ -45,8 +52,8 @@ class TextFieldWidget extends StatelessWidget {
                   size: 18,
                 ),
                 labelText: lable,
-                labelStyle:Theme.of(context).textTheme.labelMedium,
-                border: const OutlineInputBorder(
+                labelStyle: Theme.of(context).textTheme.labelMedium,
+                border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10)))),
           ),
         ),

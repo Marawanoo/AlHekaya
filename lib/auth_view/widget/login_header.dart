@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news/main_variable.dart';
 
 class LoginHeader extends StatelessWidget {
   const LoginHeader({super.key});
@@ -9,9 +10,7 @@ class LoginHeader extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 100),
       width: MediaQuery.sizeOf(context).width,
       height: 350,
-      decoration: const BoxDecoration(
-          gradient:
-              LinearGradient(colors: [Color(0xff990F20), Color(0xffFF213E)])),
+      decoration: const BoxDecoration(gradient: gradient),
       child: Center(
         child: Image.asset(
           'assets/images/file.png',

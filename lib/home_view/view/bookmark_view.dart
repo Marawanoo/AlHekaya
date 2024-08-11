@@ -10,7 +10,8 @@ class BookmarkView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const Icon(Iconsax.search_normal),
             Text(
@@ -19,8 +20,7 @@ class BookmarkView extends StatelessWidget {
                   .textTheme
                   .headlineSmall!
                   .copyWith(color: mainColor),
-            )
-            ,
+            ),
           ],
         ),
       ),
