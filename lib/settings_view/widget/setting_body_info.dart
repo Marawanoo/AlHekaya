@@ -10,12 +10,12 @@ class SettingBodyInfo extends StatelessWidget {
     return GestureDetector(
       onTap: function,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
         color: Colors.white,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Icon(Icons.chevron_left),
+            const Icon(Icons.chevron_left),
             Text(
               title,
               style: Theme.of(context).textTheme.bodyLarge,

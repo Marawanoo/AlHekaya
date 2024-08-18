@@ -12,10 +12,10 @@ class SettingBody extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        SizedBox(
+        const SizedBox(
           height: space * 2,
         ),
-        Padding(
+        const Padding(
           padding: EdgeInsets.symmetric(horizontal: 15, vertical: 2),
           child: Text('حساب'),
         ),
@@ -26,10 +26,10 @@ class SettingBody extends StatelessWidget {
         SettingBodyInfo(
             title: 'إنشاء حساب الحكاية مجاني',
             function: () => Get.toNamed(profileView)),
-        SizedBox(
+        const SizedBox(
           height: space * 2,
         ),
-        Padding(
+        const Padding(
           padding: EdgeInsets.symmetric(horizontal: 15, vertical: 2),
           child: Text('عام'),
         ),

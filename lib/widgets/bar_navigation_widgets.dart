@@ -3,61 +3,74 @@ import 'package:iconsax/iconsax.dart';
 import 'package:news/main_variable.dart';
 
 class BarNavigationWidgets extends StatefulWidget {
-  const BarNavigationWidgets(
-      {super.key, required this.barSelect, required this.barIndex});
-  final Color barSelect;
-  final int barIndex;
+  const BarNavigationWidgets({super.key, required this.pageController});
+
+  final PageController pageController;
   @override
   State<BarNavigationWidgets> createState() => _BarNavigationWidgetsState();
 }
 
 class _BarNavigationWidgetsState extends State<BarNavigationWidgets> {
+  int barIndex = 3;
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       onTap: (value) {
         setState(() {
           switch (value) {
-            // case 0:
-            //   Navigator.pushReplacementNamed(context, profilePage);
-            //   break;
-            // case 1:
-            //   Navigator.pushReplacementNamed(context, favoritePage);
-            //   break;
-            case 2:
-              Navigator.pushNamed(context, exploreView);
+            case 0:
+              widget.pageController.jumpToPage(3);
+              barIndex = value;
               break;
-            // case 3:
-            //   Navigator.pushReplacementNamed(context, homePage);
-            //   break;
-            // default:
-            //   // فعل شيء آخر
-            //   break;
+            case 1:
+              widget.pageController.jumpToPage(2);
+              barIndex = value;
+              break;
+            case 2:
+              widget.pageController.jumpToPage(1);
+              barIndex = value;
+              break;
+            case 3:
+              widget.pageController.jumpToPage(0);
+              barIndex = value;
+              break;
+            default:
+              // فعل شيء آخر
+              break;
           }
         });
       },
       items: const [
         BottomNavigationBarItem(
+          backgroundColor: Colors.white,
           key: Key('حسابي'),
           icon: Icon(Iconsax.user),
           label: 'حسابي',
         ),
         BottomNavigationBarItem(
-            key: Key("تواصل معنا"),
-            icon: Icon(Iconsax.heart),
-            label: 'إشارات مرجعية'),
+          backgroundColor: Colors.white,
+          key: Key(
+            'الأخبار المحفوظة',
+          ),
+          icon: Icon(Iconsax.heart),
+          label: 'الأخبار المحفوظة',
+        ),
         BottomNavigationBarItem(
-            key: Key('استكشاف'), icon: Icon(Iconsax.export), label: 'استكشاف'),
+            backgroundColor: Colors.white,
+            key: Key('استكشاف'),
+            icon: Icon(Iconsax.export),
+            label: 'استكشاف'),
         BottomNavigationBarItem(
-            key: Key('الرئيسة'), icon: Icon(Iconsax.home), label: 'الرئيسية')
+            backgroundColor: Colors.white,
+            key: Key('الرئيسة'),
+            icon: Icon(Iconsax.home),
+            label: 'الرئيسية')
       ],
-      currentIndex: widget.barIndex,
-      type: BottomNavigationBarType.fixed,
+      currentIndex: barIndex,
       backgroundColor: Colors.white,
-      elevation: 0,
       iconSize: 20,
       selectedLabelStyle: Theme.of(context).textTheme.labelLarge,
-      selectedItemColor: widget.barSelect,
+      selectedItemColor: mainColor,
       unselectedLabelStyle: Theme.of(context).textTheme.labelLarge,
       unselectedItemColor: const Color.fromARGB(255, 65, 65, 65),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../main_variable.dart';
 
 class SplashSkip extends StatelessWidget {
@@ -11,9 +12,12 @@ class SplashSkip extends StatelessWidget {
       left: -10,
       top: 20,
       child: TextButton(
-        onPressed: () => Get.toNamed(mainView),
-        child:  Text('تخطي',
-            style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: Colors.white)),
+        onPressed: () => Get.offNamed(mainView),
+        child: Text('تخطي',
+            style: Theme.of(context)
+                .textTheme
+                .headlineSmall!
+                .copyWith(color: Colors.white)),
       ),
     );
   }

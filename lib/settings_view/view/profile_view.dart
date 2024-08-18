@@ -15,10 +15,10 @@ class ProfileView extends StatelessWidget {
         child: Stack(
           children: [
             Container(
-              decoration: BoxDecoration(gradient: gradient),
+              decoration: const BoxDecoration(gradient: gradient),
               height: heightMedia * 0.5,
               width: widhtMedia,
-              padding: EdgeInsets.only(top: 25),
+              padding: const EdgeInsets.only(top: 25),
               child: Align(
                 alignment: Alignment.topCenter,
                 child: Image.asset(width: 200, 'assets/images/file.png'),
@@ -36,12 +36,12 @@ class ProfileView extends StatelessWidget {
                     color: Colors.grey.withOpacity(0.1),
                     spreadRadius: 5,
                     blurRadius: 10,
-                    offset: Offset(0, 3),
+                    offset: const Offset(0, 3),
                   ),
                 ],
                 color: Colors.white,
               ),
-              child: Column(
+              child: const Column(
                 children: [
                   Padding(
                     padding: EdgeInsets.only(top: 5),

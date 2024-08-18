@@ -20,7 +20,7 @@ class SettingView extends StatelessWidget {
               .copyWith(color: mainColor),
         ),
       ),
-      body: SingleChildScrollView(child: SettingBody()),
+      body: const SingleChildScrollView(child: SettingBody()),
     );
   }
 }

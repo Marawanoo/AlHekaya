@@ -8,14 +8,12 @@ import 'package:news/home_view/view/explore_view.dart';
 import 'package:news/home_view/view/home_view.dart';
 import 'package:news/home_view/view/main_view.dart';
 import 'package:news/main_variable.dart';
-import 'package:news/services/news_services.dart';
 import 'package:news/settings_view/view/general_view.dart';
 import 'package:news/settings_view/view/profile_view.dart';
 import 'package:news/settings_view/view/setting_view.dart';
 import 'package:news/splash_view/view/splash_view.dart';
 
 void main() {
-  NewsServices().getNews();
   runApp(const NewsApp());
 }
 
@@ -41,6 +39,7 @@ class NewsApp extends StatelessWidget {
         GetPage(name: profileView, page: () => const ProfileView()),
       ],
       theme: ThemeData(
+        bottomAppBarTheme: const BottomAppBarTheme(color: Colors.white),
         appBarTheme: const AppBarTheme(backgroundColor: Colors.white),
         scaffoldBackgroundColor: Colors.white,
         fontFamily: 'Rubik',

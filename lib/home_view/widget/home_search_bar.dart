@@ -9,23 +9,23 @@ class HomeSearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       children: [
-        Container(
-          padding: const EdgeInsets.all(5),
-          decoration: BoxDecoration(
-              color: mainColor, borderRadius: BorderRadius.circular(100)),
-          alignment: Alignment.center,
-          child: const Icon(
-            size: 30,
-            Iconsax.arrange_circle,
-            color: Colors.white,
-          ),
-        ),
-        const SizedBox(
+        // Container(
+        //   padding: const EdgeInsets.all(5),
+        //   decoration: BoxDecoration(
+        //       color: mainColor, borderRadius: BorderRadius.circular(100)),
+        //   alignment: Alignment.center,
+        //   child: const Icon(
+        //     size: 30,
+        //     Iconsax.arrange_circle,
+        //     color: Colors.white,
+        //   ),
+        // ),
+        SizedBox(
           width: space,
         ),
-        const Expanded(
+        Expanded(
           child: TextFieldWidget(
               title: '',
               lable: 'ابحث عن الأخبار أو الكاتب',

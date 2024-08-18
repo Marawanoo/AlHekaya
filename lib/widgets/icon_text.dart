@@ -17,10 +17,11 @@ class IconText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.end,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
+          textDirection: TextDirection.rtl,
           title,
           style: Theme.of(context).textTheme.labelLarge,
         ),

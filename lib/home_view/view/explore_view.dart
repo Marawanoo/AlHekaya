@@ -3,7 +3,6 @@ import 'package:iconsax/iconsax.dart';
 import 'package:news/home_view/widget/explore_categorie_list.dart';
 import 'package:news/home_view/widget/home_title_bar.dart';
 import 'package:news/main_variable.dart';
-import 'package:news/widgets/news_component.dart';
 import 'package:news/widgets/text_field_widget.dart';
 
 class ExploreView extends StatelessWidget {
@@ -11,7 +10,7 @@ class ExploreView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -47,10 +46,11 @@ class ExploreView extends StatelessWidget {
                 const SizedBox(
                   height: space,
                 ),
-                const SizedBox(height: 25, child: HomeTitleBar(title: 'الشائع')),
-                const NewsComponent(),
-                const NewsComponent(),
-                const NewsComponent()
+                const SizedBox(
+                    height: 25, child: HomeTitleBar(title: 'الشائع')),
+                // const NewsComponent(),
+                // const NewsComponent(),
+                // const NewsComponent()
               ],
             ),
           ),

@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:news/home_view/widget/home_app_bar.dart';
+import 'package:news/home_view/widget/home_header_body_builder.dart';
 import 'package:news/home_view/widget/home_news_component_buldier.dart';
 import 'package:news/home_view/widget/home_news_list_bar.dart';
 import 'package:news/home_view/widget/home_title_bar.dart';
-import 'package:news/main_variable.dart';
-import 'package:news/home_view/widget/home_app_bar.dart';
-import 'package:news/home_view/widget/home_header_body_builder.dart';
-import 'package:news/home_view/widget/home_search_bar.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -27,13 +25,6 @@ class HomeView extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 15),
               child: HomeAppBar(),
             ),
-            const SizedBox(
-              height: space,
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15),
-              child: HomeSearchBar(),
-            ),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 15),
               child: HomeTitleBar(
@@ -50,10 +41,7 @@ class HomeView extends StatelessWidget {
                 title: 'استكشاف',
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(right: 15),
-              child: HomeNewsListBar(),
-            ),
+            const HomeNewsListBar(),
             Container(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: const HomeNewsComponentBuldier()),
@@ -77,4 +65,3 @@ class HomeView extends StatelessWidget {
 //               NewsViewBuilder()
 //             ],
 //           ),
-         

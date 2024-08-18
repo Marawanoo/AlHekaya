@@ -32,10 +32,10 @@ class TextFieldWidget extends StatelessWidget {
               ),
         SizedBox(
           height: height,
-          child: TextField(
+          child: TextFormField(
             style: Theme.of(context).textTheme.bodyMedium,
             decoration: InputDecoration(
-                focusedBorder: OutlineInputBorder(
+                focusedBorder: const OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.black),
                     borderRadius: BorderRadius.all(Radius.circular(10))),
                 contentPadding:
@@ -53,7 +53,7 @@ class TextFieldWidget extends StatelessWidget {
                 ),
                 labelText: lable,
                 labelStyle: Theme.of(context).textTheme.labelMedium,
-                border: OutlineInputBorder(
+                border: const OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10)))),
           ),
         ),
