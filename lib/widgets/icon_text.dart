@@ -18,16 +18,16 @@ class IconText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.end,
       children: [
+        Icon(
+          icon,
+          size: iconSize,
+        ),
         Text(
           textDirection: TextDirection.rtl,
           title,
           style: Theme.of(context).textTheme.labelLarge,
-        ),
-        Icon(
-          icon,
-          size: iconSize,
         ),
       ],
     );

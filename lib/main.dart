@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:news/auth_view/view/login_view.dart';
 import 'package:news/auth_view/view/register_view.dart';
 import 'package:news/home_view/view/bookmark_view.dart';
-import 'package:news/home_view/view/details_view.dart';
 import 'package:news/home_view/view/explore_view.dart';
 import 'package:news/home_view/view/home_view.dart';
 import 'package:news/home_view/view/main_view.dart';
@@ -32,7 +31,7 @@ class NewsApp extends StatelessWidget {
         GetPage(name: registerView, page: () => const RegisterView()),
         GetPage(name: homeView, page: () => const HomeView()),
         GetPage(name: exploreView, page: () => const ExploreView()),
-        GetPage(name: detailsView, page: () => const DetailsView()),
+        // (GetPage(name: detailsView, page: () => const DetailsView())),
         GetPage(name: bookmarkView, page: () => const BookmarkView()),
         GetPage(name: settingView, page: () => const SettingView()),
         GetPage(name: generalView, page: () => const GeneralView()),

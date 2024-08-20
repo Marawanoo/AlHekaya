@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news/main_variable.dart';
 
 class AppBarIcon extends StatelessWidget {
   const AppBarIcon({super.key, required this.icon});
@@ -14,6 +15,7 @@ class AppBarIcon extends StatelessWidget {
       child: Icon(
         icon,
         size: 30,
+        color: mainColor,
       ),
     );
   }

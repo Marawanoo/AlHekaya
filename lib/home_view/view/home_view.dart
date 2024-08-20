@@ -1,4 +1,8 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:news/core/api/dio_consumer.dart';
+import 'package:news/home_view/controller/news_controller.dart';
 import 'package:news/home_view/widget/home_app_bar.dart';
 import 'package:news/home_view/widget/home_header_body_builder.dart';
 import 'package:news/home_view/widget/home_news_component_buldier.dart';
@@ -10,42 +14,50 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final newsController =
+        Get.put(NewsController(apiConsumer: DioConsumer(Dio())));
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
         toolbarHeight: 10,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15),
-              child: HomeAppBar(),
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15),
-              child: HomeTitleBar(
-                title: 'أهم الأخبار',
+      body: RefreshIndicator(
+        onRefresh: () async {
+          await newsController.getTopNews();
+          await newsController.getGeneralNews('world', 'الكل');
+        },
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: HomeAppBar(),
               ),
-            ),
-            SizedBox(
-                width: MediaQuery.sizeOf(context).width,
-                height: 300,
-                child: const HomeHeaderBodyBuilder()),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15),
-              child: HomeTitleBar(
-                title: 'استكشاف',
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                child: HomeTitleBar(
+                  title: 'أهم الأخبار',
+                ),
               ),
-            ),
-            const HomeNewsListBar(),
-            Container(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: const HomeNewsComponentBuldier()),
-          ],
+              SizedBox(
+                  width: MediaQuery.sizeOf(context).width,
+                  height: 300,
+                  child: const HomeHeaderBodyBuilder()),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                child: HomeTitleBar(
+                  title: 'استكشاف',
+                ),
+              ),
+              const HomeNewsListBar(),
+              Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: const HomeNewsComponentBuldier()),
+            ],
+          ),
         ),
       ),
     );

@@ -8,37 +8,38 @@ class NewsController extends GetxController {
   RxList topArticlesList = [].obs;
   RxList generalArticlesList = [].obs;
   String category = 'الكل';
-  RxBool isLoading = true.obs;
+  RxBool isLoadingTopNews = true.obs;
+  RxBool isLoadingGeneralNews = true.obs;
   NewsController({required this.apiConsumer});
 
   @override
   void onInit() {
     super.onInit();
     getTopNews();
-    getGeneralNews('general', 'الكل');
+    getGeneralNews('world', 'الكل');
   }
 
   getTopNews() async {
-    isLoading.value = true;
-    List<dynamic> articles =
-        await apiConsumer.get('top-headlines?language=ar&apiKey=$apiKey');
+    isLoadingTopNews.value = true;
+    List<dynamic> articles = await apiConsumer
+        .get('latest?language=ar&apiKey=$apiKey&category=world');
     for (var article in articles) {
       NewsModel news = NewsModel.fromJson(article);
       topArticlesList.add(news);
     }
-    isLoading.value = false;
+    isLoadingTopNews.value = false;
   }
 
   getGeneralNews(String selectCategory, String category) async {
-    isLoading.value = true;
+    isLoadingGeneralNews.value = true;
     generalArticlesList.clear();
     this.category = category;
-    List<dynamic> articles = await apiConsumer.get(
-        'top-headlines?language=ar&category=$selectCategory&apiKey=$apiKey');
+    List<dynamic> articles = await apiConsumer
+        .get('latest?language=ar&category=$selectCategory&apiKey=$apiKey');
     for (var article in articles) {
       NewsModel news = NewsModel.fromJson(article);
       generalArticlesList.add(news);
     }
-    isLoading.value = false;
+    isLoadingGeneralNews.value = false;
   }
 }

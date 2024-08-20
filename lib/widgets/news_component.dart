@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:news/home_view/model/news_model.dart';
 
+import '../home_view/view/details_view.dart';
 import '../main_variable.dart';
 import 'icon_text.dart';
 
@@ -15,7 +16,15 @@ class NewsComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Get.toNamed(detailsView),
+      onTap: () => Get.to(DetailsView(
+        newsModel: NewsModel(
+            image: newsModel.image,
+            title: newsModel.title,
+            author: newsModel.author,
+            publishedAt: newsModel.publishedAt,
+            description: newsModel.description),
+        category: category,
+      )),
       child: Stack(
         children: [
           Container(
@@ -27,11 +36,12 @@ class NewsComponent extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16),
                 color: const Color(0xfff9f9f9)),
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         '  أخبار:$category',
@@ -70,15 +80,19 @@ class NewsComponent extends StatelessWidget {
                     ],
                   ),
                 ),
-                Card(
-                    clipBehavior: Clip.hardEdge,
-                    child: newsModel.image == ''
-                        ? Image.asset(
-                            fit: BoxFit.fill,
-                            width: 100,
-                            height: 100,
-                            'assets/images/350128296_675694891049596_7342086158320602888_n.png')
-                        : Image.network(newsModel.image)),
+                SizedBox(
+                  width: 120,
+                  child: Card(
+                      color: Colors.transparent,
+                      clipBehavior: Clip.hardEdge,
+                      child: newsModel.image == ''
+                          ? Image.asset(
+                              fit: BoxFit.cover,
+                              width: 100,
+                              height: 150,
+                              'assets/images/350128296_675694891049596_7342086158320602888_n.png')
+                          : Image.network(newsModel.image)),
+                ),
               ],
             ),
           ),

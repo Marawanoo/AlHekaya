@@ -12,7 +12,7 @@ class HomeNewsComponentBuldier extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetX<NewsController>(builder: (controller) {
-      if (controller.isLoading.value) {
+      if (controller.isLoadingGeneralNews.value) {
         return Padding(
           padding: const EdgeInsets.only(top: 25),
           child: Center(

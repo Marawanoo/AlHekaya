@@ -1,5 +1,5 @@
 class EndPoints {
-  static String baseUrl = 'https://newsapi.org/v2/';
+  static String baseUrl = 'https://newsdata.io/api/1/';
   static String signIn = 'user/signin';
 }
 

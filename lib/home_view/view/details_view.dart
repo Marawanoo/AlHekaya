@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:news/home_view/model/news_model.dart';
 import 'package:news/main_variable.dart';
 import 'package:news/widgets/app_bar_icon.dart';
 import 'package:news/widgets/icon_text.dart';
 
 class DetailsView extends StatelessWidget {
-  const DetailsView({super.key});
+  const DetailsView(
+      {super.key, required this.newsModel, required this.category});
+  final NewsModel newsModel;
+  final String category;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +29,7 @@ class DetailsView extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(right: 15),
                   child: AppBarIcon(
-                    icon: Icons.bookmark,
+                    icon: Icons.bookmark_border,
                   ),
                 )
               ],
@@ -44,7 +48,7 @@ class DetailsView extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: Text(
                   textDirection: TextDirection.rtl,
-                  'مصر توجه شركات الطيران بتجنب التحليق في المجال الجوي الإيراني',
+                  newsModel.title,
                   style: Theme.of(context)
                       .textTheme
                       .bodyLarge
@@ -59,18 +63,15 @@ class DetailsView extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-
-                    const IconText(
+                    IconText(
                         iconSize: 15,
                         textSize: 14,
-                        title: ' 5H ago',
+                        title: newsModel.getTimeAgo(newsModel.publishedAt),
                         icon: Iconsax.clock,
-                        color: Colors.grey) ,Text(
-                      'رياضة',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodySmall
-                          ,
+                        color: Colors.grey),
+                    Text(
+                      newsModel.author,
+                      style: Theme.of(context).textTheme.bodySmall,
                     ),
                   ],
                 ),
@@ -82,8 +83,12 @@ class DetailsView extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(16),
-                    child: Image.asset(
-                        'assets/images/wallpaperflare.com_wallpaper.jpg')),
+                    child: newsModel.image == ''
+                        ? Image.asset(
+                            'assets/images/350128296_675694891049596_7342086158320602888_n.png',
+                            height: 200,
+                          )
+                        : Image.network(newsModel.image)),
               ),
               const SizedBox(
                 height: space,
@@ -91,7 +96,7 @@ class DetailsView extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: Text(
-                  '',
+                  newsModel.description,
                   textDirection: TextDirection.rtl,
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),

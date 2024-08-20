@@ -26,7 +26,7 @@ class HomeNewsListBar extends StatelessWidget {
       'تكنولوجيا'
     ];
     const List<String> category = [
-      'general',
+      'world',
       'sports',
       'science',
       'health',
@@ -46,7 +46,7 @@ class HomeNewsListBar extends StatelessWidget {
           itemBuilder: (BuildContext context, int index) => Container(
             width: 75,
             height: 30,
-            margin: const EdgeInsets.only(right: 10),
+            margin: const EdgeInsets.symmetric(horizontal: 8),
             child: ElevatedBottomWidget(
                 size: 14,
                 title: itemBar[index],

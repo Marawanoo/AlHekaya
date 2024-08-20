@@ -9,14 +9,16 @@ import 'package:news/home_view/widget/home_header_body_card.dart';
 import '../../main_variable.dart';
 
 class HomeHeaderBodyBuilder extends StatelessWidget {
-  const HomeHeaderBodyBuilder({super.key});
+  const HomeHeaderBodyBuilder({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return GetX<NewsController>(
         init: NewsController(apiConsumer: DioConsumer(Dio())),
         builder: (controller) {
-          if (controller.isLoading.value) {
+          if (controller.isLoadingTopNews.value) {
             return Center(
               child: LoadingAnimationWidget.inkDrop(color: mainColor, size: 25),
             );
@@ -31,6 +33,7 @@ class HomeHeaderBodyBuilder extends StatelessWidget {
               itemCount: controller.topArticlesList.length,
               itemBuilder: (context, index) => HomeHeaderBodyCard(
                 newsModel: controller.topArticlesList[index],
+                category: controller.category,
               ),
             );
           }

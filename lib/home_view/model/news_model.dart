@@ -14,10 +14,10 @@ class NewsModel {
 
   factory NewsModel.fromJson(Map<String, dynamic> jsonData) {
     return NewsModel(
-        image: jsonData['urlToImage'] ?? '',
+        image: jsonData['image_url'] ?? '',
         title: jsonData['title'] ?? '',
-        author: jsonData['author'] ?? '',
-        publishedAt: jsonData['publishedAt'] ?? '',
+        author: jsonData['source_name'] ?? '',
+        publishedAt: jsonData['pubDate'] ?? '',
         description: jsonData['description'] ?? jsonData['title']);
   }
   String getTimeAgo(String publishedAt) {
@@ -34,4 +34,13 @@ class NewsModel {
       return ' منذ ${difference.inDays} يوم';
     }
   }
+}
+
+class NewsModelempty extends NewsModel {
+  NewsModelempty(
+      {required super.image,
+      required super.title,
+      required super.author,
+      required super.publishedAt,
+      required super.description});
 }

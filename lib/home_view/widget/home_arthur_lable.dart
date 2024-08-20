@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:news/home_view/controller/bookmark_controller.dart';
 import 'package:news/home_view/model/news_model.dart';
 import 'package:news/widgets/icon_text.dart';
 
@@ -14,14 +16,24 @@ class HomeArthurLable extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        const Expanded(
+        Expanded(
           child: Align(
             alignment: Alignment.centerLeft,
-            child: Icon(
-              color: mainColor,
-              Icons.bookmark_border,
-              size: 25,
-            ),
+            child: GetBuilder<BookmarkController>(
+                init: BookmarkController(),
+                builder: (controller) {
+                  return IconButton(
+                    padding: const EdgeInsets.all(0),
+                    icon: const Icon(
+                      color: mainColor,
+                      Icons.bookmark_border,
+                      size: 25,
+                    ),
+                    onPressed: () {
+                      controller.save(context);
+                    },
+                  );
+                }),
           ),
         ),
         Column(
@@ -30,6 +42,7 @@ class HomeArthurLable extends StatelessWidget {
             SizedBox(
               width: 100,
               child: Text(
+                textAlign: TextAlign.start,
                 textDirection: TextDirection.rtl,
                 newsModel.author,
                 style: Theme.of(context).textTheme.labelLarge,
@@ -44,7 +57,7 @@ class HomeArthurLable extends StatelessWidget {
           ],
         ),
         const SizedBox(
-          width: space / 2,
+          width: space - 10,
         ),
         const CircleAvatar(
           radius: 15,

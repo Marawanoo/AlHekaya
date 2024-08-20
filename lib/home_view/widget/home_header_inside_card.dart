@@ -10,7 +10,7 @@ class HomeHeaderInsideCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       decoration: BoxDecoration(
           backgroundBlendMode: BlendMode.screen,
           borderRadius: BorderRadius.circular(16),
