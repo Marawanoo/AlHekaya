@@ -8,11 +8,17 @@ class TextFieldWidget extends StatelessWidget {
     required this.lable,
     required this.icon,
     this.height = 45,
+    this.functionSaved,
+    this.controller,
+    this.textAlign = TextAlign.start,
   });
   final String title;
   final String lable;
   final IconData icon;
   final double height;
+  final void Function(String?)? functionSaved;
+  final TextEditingController? controller;
+  final TextAlign textAlign;
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +39,22 @@ class TextFieldWidget extends StatelessWidget {
         SizedBox(
           height: height,
           child: TextFormField(
+            textAlign: textAlign,
+            maxLines: 1,
+            controller: controller,
+            onFieldSubmitted: functionSaved,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'الرجاء إدخال مصطلح البحث';
+              }
+              return null;
+            },
             style: Theme.of(context).textTheme.bodyMedium,
             decoration: InputDecoration(
                 focusedBorder: const OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.black),
                     borderRadius: BorderRadius.all(Radius.circular(10))),
+                errorStyle: Theme.of(context).textTheme.labelMedium,
                 contentPadding:
                     const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
                 prefixIcon: title == 'كلمة المرور'
