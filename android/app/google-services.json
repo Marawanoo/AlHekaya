@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "717074935157",
+    "project_id": "alhekaya-ea7e6",
+    "storage_bucket": "alhekaya-ea7e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:717074935157:android:33e817ff5e4423e5c0773c",
+        "android_client_info": {
+          "package_name": "com.example.news"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9eGLse-_Qagu8lccgKA4lzVpbCds6IBY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

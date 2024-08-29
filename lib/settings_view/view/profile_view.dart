@@ -52,6 +52,7 @@ class ProfileView extends StatelessWidget {
                         title: 'First Name',
                         lable: 'First Name',
                         icon: Iconsax.personalcard,
+                        valditorText: '',
                       ),
                     ),
                   ),
@@ -64,6 +65,7 @@ class ProfileView extends StatelessWidget {
                         title: 'First Name',
                         lable: 'First Name',
                         icon: Iconsax.personalcard,
+                        valditorText: '',
                       ),
                     ),
                   ),
@@ -76,6 +78,7 @@ class ProfileView extends StatelessWidget {
                         title: 'First Name',
                         lable: 'First Name',
                         icon: Iconsax.personalcard,
+                        valditorText: '',
                       ),
                     ),
                   )

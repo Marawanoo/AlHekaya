@@ -46,7 +46,7 @@ class ExploreView extends StatelessWidget {
                     child: TextFieldWidget(
                       textAlign: TextAlign.end,
                       height: 80,
-                      controller: textEditingController,
+                      textEditingController: textEditingController,
                       title: '',
                       lable: 'بحث',
                       icon: Iconsax.search_normal,
@@ -56,6 +56,7 @@ class ExploreView extends StatelessWidget {
                           formKey.currentState!.save();
                         }
                       },
+                      valditorText: 'الرجاء إدخال مصطلح البحث',
                     ),
                   ),
                 ),

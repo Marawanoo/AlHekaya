@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:news/auth_view/view/login_view.dart';
@@ -12,12 +13,18 @@ import 'package:news/settings_view/view/profile_view.dart';
 import 'package:news/settings_view/view/setting_view.dart';
 import 'package:news/splash_view/view/splash_view.dart';
 
-void main() {
-  runApp(const NewsApp());
+import 'firebase_options.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(const AlHekaya());
 }
 
-class NewsApp extends StatelessWidget {
-  const NewsApp({super.key});
+class AlHekaya extends StatelessWidget {
+  const AlHekaya({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +45,7 @@ class NewsApp extends StatelessWidget {
         GetPage(name: profileView, page: () => const ProfileView()),
       ],
       theme: ThemeData(
+        dialogBackgroundColor: Colors.white,
         bottomAppBarTheme: const BottomAppBarTheme(color: Colors.white),
         appBarTheme: const AppBarTheme(backgroundColor: Colors.white),
         scaffoldBackgroundColor: Colors.white,

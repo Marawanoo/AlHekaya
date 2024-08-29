@@ -27,9 +27,11 @@ class HomeSearchBar extends StatelessWidget {
         ),
         Expanded(
           child: TextFieldWidget(
-              title: '',
-              lable: 'ابحث عن الأخبار أو الكاتب',
-              icon: Iconsax.search_favorite),
+            title: '',
+            lable: 'ابحث عن الأخبار أو الكاتب',
+            icon: Iconsax.search_favorite,
+            valditorText: '',
+          ),
         ),
       ],
     );
