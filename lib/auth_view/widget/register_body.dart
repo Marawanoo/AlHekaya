@@ -95,8 +95,12 @@ class RegisterBody extends StatelessWidget {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
                     if (password == confirmPassword) {
-                      controller.addUser(firstName!, lastName!, emailAddress!);
-                      controller.createUser(emailAddress!, password!);
+                      controller.createUser(
+                        emailAddress!,
+                        password!,
+                        firstName!,
+                        lastName!,
+                      );
                     } else {
                       Get.defaultDialog(
                         title: 'خطأ',

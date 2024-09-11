@@ -91,7 +91,15 @@ class NewsComponent extends StatelessWidget {
                               width: 100,
                               height: 150,
                               'assets/images/350128296_675694891049596_7342086158320602888_n.png')
-                          : Image.network(newsModel.image)),
+                          : Image.network(
+                              newsModel.image,
+                              errorBuilder: (context, error, stackTrace) =>
+                                  Image.asset(
+                                      fit: BoxFit.cover,
+                                      width: 100,
+                                      height: 150,
+                                      'assets/images/350128296_675694891049596_7342086158320602888_n.png'),
+                            )),
                 ),
               ],
             ),

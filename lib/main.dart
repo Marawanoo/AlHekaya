@@ -38,7 +38,6 @@ class AlHekaya extends StatelessWidget {
         GetPage(name: registerView, page: () => const RegisterView()),
         GetPage(name: homeView, page: () => const HomeView()),
         GetPage(name: exploreView, page: () => const ExploreView()),
-        // (GetPage(name: detailsView, page: () => const DetailsView())),
         GetPage(name: bookmarkView, page: () => const BookmarkView()),
         GetPage(name: settingView, page: () => const SettingView()),
         GetPage(name: generalView, page: () => const GeneralView()),

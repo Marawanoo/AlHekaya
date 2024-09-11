@@ -13,7 +13,10 @@ class TextFieldWidget extends StatefulWidget {
     this.textAlign = TextAlign.start,
     required this.valditorText,
     this.isPassword = false,
+    this.intString,
+    this.readOnly = false,
   });
+
   final String title;
   final String lable;
   final IconData icon;
@@ -23,6 +26,8 @@ class TextFieldWidget extends StatefulWidget {
   final TextAlign textAlign;
   final String valditorText;
   final bool isPassword;
+  final String? intString;
+  final bool readOnly;
 
   @override
   State<TextFieldWidget> createState() => _TextFieldWidgetState();
@@ -30,15 +35,14 @@ class TextFieldWidget extends StatefulWidget {
 
 class _TextFieldWidgetState extends State<TextFieldWidget> {
   bool isPasswordVisible = true;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         widget.title == ''
-            ? const SizedBox(
-                height: 0,
-              )
+            ? const SizedBox.shrink()
             : Text(
                 widget.title,
                 style: Theme.of(context)
@@ -49,6 +53,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
         SizedBox(
           height: widget.height,
           child: TextFormField(
+            readOnly: widget.readOnly,
             obscureText: widget.isPassword && isPasswordVisible,
             onSaved: widget.functionSaved,
             textAlign: widget.textAlign,

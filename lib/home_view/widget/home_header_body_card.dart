@@ -27,10 +27,11 @@ class HomeHeaderBodyCard extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             image: DecorationImage(
-                fit: BoxFit.fill,
-                image: newsModel.image == ''
-                    ? const AssetImage('assets/images/science.jpg')
-                    : NetworkImage(newsModel.image) as ImageProvider),
+              fit: BoxFit.fill,
+              image: newsModel.image.isEmpty
+                  ? const AssetImage('assets/images/science.jpg')
+                  : NetworkImage(newsModel.image) as ImageProvider,
+            ),
           ),
           child: HomeHeaderInsideCard(
             newsModel: newsModel,
