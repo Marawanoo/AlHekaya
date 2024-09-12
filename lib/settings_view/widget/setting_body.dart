@@ -24,7 +24,7 @@ class SettingBody extends StatelessWidget {
           function: () => Get.toNamed(loginView),
         ),
         SettingBodyInfo(
-            title: 'إنشاء حساب الحكاية مجاني',
+            title: 'حساب الحكاية الخاص بك',
             function: () => Get.toNamed(profileView)),
         const SizedBox(
           height: space * 2,

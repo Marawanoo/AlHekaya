@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:news/home_view/model/news_model.dart';
 import 'package:news/main_variable.dart';
 import 'package:news/widgets/app_bar_icon.dart';
 import 'package:news/widgets/icon_text.dart';
+
+import '../controller/bookmark_controller.dart';
 
 class DetailsView extends StatelessWidget {
   const DetailsView(
@@ -13,13 +16,14 @@ class DetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final BookmarkController bookmarkController = Get.put(BookmarkController());
     return Scaffold(
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
-            const SliverAppBar(
+            SliverAppBar(
               centerTitle: true,
-              title: CircleAvatar(
+              title: const CircleAvatar(
                 radius: 20,
                 backgroundImage: AssetImage(
                   'assets/images/350128296_675694891049596_7342086158320602888_n.png',
@@ -27,15 +31,27 @@ class DetailsView extends StatelessWidget {
               ),
               actions: [
                 Padding(
-                  padding: EdgeInsets.only(right: 15),
-                  child: AppBarIcon(
-                    icon: Icons.bookmark_border,
+                  padding: const EdgeInsets.only(right: 15),
+                  child: Obx(
+                    () => AppBarIcon(
+                      icon:
+                          bookmarkController.bookmarks.containsKey(newsModel.id)
+                              ? Icons.bookmark
+                              : Icons.bookmark_border,
+                      function: () =>
+                          bookmarkController.save(newsModel, category),
+                    ),
                   ),
-                )
+                ),
               ],
               leading: Padding(
-                padding: EdgeInsets.only(left: 15),
-                child: AppBarIcon(icon: Icons.chevron_left),
+                padding: const EdgeInsets.only(left: 15),
+                child: AppBarIcon(
+                  icon: Icons.chevron_left,
+                  function: () {
+                    Get.back();
+                  },
+                ),
               ),
               backgroundColor: Colors.white,
             ),

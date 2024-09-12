@@ -35,6 +35,7 @@ class HomeHeaderBodyCard extends StatelessWidget {
           ),
           child: HomeHeaderInsideCard(
             newsModel: newsModel,
+            category: category,
           )),
     );
   }

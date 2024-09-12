@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:news/home_view/model/news_model.dart';
 
+import '../home_view/controller/bookmark_controller.dart';
 import '../home_view/view/details_view.dart';
 import '../main_variable.dart';
 import 'icon_text.dart';
@@ -15,6 +16,8 @@ class NewsComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final BookmarkController controller = Get.put(BookmarkController());
+
     return GestureDetector(
       onTap: () => Get.to(DetailsView(
         newsModel: NewsModel(
@@ -22,7 +25,8 @@ class NewsComponent extends StatelessWidget {
             title: newsModel.title,
             author: newsModel.author,
             publishedAt: newsModel.publishedAt,
-            description: newsModel.description),
+            description: newsModel.description,
+            id: newsModel.id),
         category: category,
       )),
       child: Stack(
@@ -104,14 +108,21 @@ class NewsComponent extends StatelessWidget {
               ],
             ),
           ),
-          const Positioned(
-              left: 10,
-              top: 20,
-              child: Icon(
+          Obx(
+            () => IconButton(
+              padding: const EdgeInsets.symmetric(vertical: 25),
+              icon: Icon(
+                controller.bookmarks.containsKey(newsModel.id)
+                    ? Icons.bookmark
+                    : Icons.bookmark_border,
                 size: 20,
-                Icons.bookmark_border,
                 color: mainColor,
-              ))
+              ),
+              onPressed: () {
+                controller.save(newsModel, category);
+              },
+            ),
+          ),
         ],
       ),
     );

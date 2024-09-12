@@ -1,22 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
+import 'package:get/get.dart';
+import 'package:news/settings_view/controller/profile_controller.dart';
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
+    ProfileController controller = Get.put(ProfileController());
     return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        const Expanded(
-            child: Align(
-                alignment: Alignment.centerLeft,
-                child: Icon(
-                  Iconsax.notification,
-                  size: 28,
-                ))),
         Text(
-          ' صباح الخير!  \n  ضيف   ',
+          ' صباح الخير!  \n  ${controller.firstName.value.isEmpty ? 'ضيف' : controller.firstName.value}',
           style: Theme.of(context).textTheme.titleMedium,
           textDirection: TextDirection.rtl,
         ),

@@ -14,6 +14,7 @@ import 'package:news/settings_view/view/setting_view.dart';
 import 'package:news/splash_view/view/splash_view.dart';
 
 import 'firebase_options.dart';
+import 'middleware/mainmiddleware.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,7 +33,11 @@ class AlHekaya extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: splashView,
       getPages: [
-        GetPage(name: splashView, page: () => const SplashView()),
+        GetPage(
+          name: splashView,
+          page: () => const SplashView(),
+          middlewares: [MainMiddleware()],
+        ),
         GetPage(name: mainView, page: () => const MainView()),
         GetPage(name: loginView, page: () => const LoginView()),
         GetPage(name: registerView, page: () => const RegisterView()),

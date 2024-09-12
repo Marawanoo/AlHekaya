@@ -8,33 +8,35 @@ import 'package:news/widgets/icon_text.dart';
 import '../../main_variable.dart';
 
 class HomeArthurLable extends StatelessWidget {
-  const HomeArthurLable({super.key, required this.newsModel});
+  const HomeArthurLable(
+      {super.key, required this.newsModel, required this.category});
   final NewsModel newsModel;
+  final String category;
   @override
   Widget build(BuildContext context) {
+    final BookmarkController controller = Get.put(BookmarkController());
     String relativeTime = newsModel.getTimeAgo(newsModel.publishedAt);
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Expanded(
           child: Align(
-            alignment: Alignment.centerLeft,
-            child: GetBuilder<BookmarkController>(
-                init: BookmarkController(),
-                builder: (controller) {
-                  return IconButton(
-                    padding: const EdgeInsets.all(0),
-                    icon: const Icon(
-                      color: mainColor,
-                      Icons.bookmark_border,
-                      size: 25,
-                    ),
-                    onPressed: () {
-                      controller.save(context);
-                    },
-                  );
-                }),
-          ),
+              alignment: Alignment.centerLeft,
+              child: Obx(
+                () => IconButton(
+                  padding: const EdgeInsets.all(0),
+                  icon: Icon(
+                    controller.bookmarks.containsKey(newsModel.id)
+                        ? Icons.bookmark
+                        : Icons.bookmark_border,
+                    color: mainColor,
+                    size: 25,
+                  ),
+                  onPressed: () {
+                    controller.save(newsModel, category);
+                  },
+                ),
+              )),
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.end,

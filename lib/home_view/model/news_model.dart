@@ -4,9 +4,11 @@ class NewsModel {
   final String author;
   final String publishedAt;
   final String description;
+  final String id;
 
   NewsModel(
-      {required this.image,
+      {required this.id,
+      required this.image,
       required this.title,
       required this.author,
       required this.publishedAt,
@@ -14,6 +16,7 @@ class NewsModel {
 
   factory NewsModel.fromJson(Map<String, dynamic> jsonData) {
     return NewsModel(
+        id: jsonData['article_id'],
         image: jsonData['image_url'] ?? '',
         title: jsonData['title'] ?? '',
         author: jsonData['source_name'] ?? '',
@@ -42,5 +45,6 @@ class NewsModelempty extends NewsModel {
       required super.title,
       required super.author,
       required super.publishedAt,
-      required super.description});
+      required super.description,
+      required super.id});
 }

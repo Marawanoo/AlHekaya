@@ -5,8 +5,10 @@ import 'home_arthur_lable.dart';
 import 'home_header_card_title.dart';
 
 class HomeHeaderInsideCard extends StatelessWidget {
-  const HomeHeaderInsideCard({super.key, required this.newsModel});
+  const HomeHeaderInsideCard(
+      {super.key, required this.newsModel, required this.category});
   final NewsModel newsModel;
+  final String category;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,6 +25,7 @@ class HomeHeaderInsideCard extends StatelessWidget {
           ),
           HomeArthurLable(
             newsModel: newsModel,
+            category: category,
           )
         ],
       ),
