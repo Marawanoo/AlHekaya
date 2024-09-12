@@ -25,8 +25,7 @@ class ExploreNewsComponentBuldier extends StatelessWidget {
         );
       } else {
         return ListView.builder(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           itemCount: controller.searchArticlesList.length,
           itemBuilder: (context, index) => NewsComponent(
             newsModel: controller.searchArticlesList[index],
